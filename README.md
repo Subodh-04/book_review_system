@@ -55,12 +55,13 @@ A lightweight yet robust REST API built using **Node.js** and **Express**, aimed
 | rating      | Number (1-5)  | Rating given by the user                   |
 | comment     | String        | Review text                                |
 
-**Notes:**
--Each user can submit only one review per book (enforced by a unique index on userId and bookId in reviews).
--Average book ratings are calculated dynamically based on reviews.
--Passwords are stored securely with hashing.
--JWT tokens are used for authentication and protected routes.
--Pagination and filtering are supported on book and review listings.
+
+## Notes:
+- Each user can submit only one review per book (enforced by a unique index on userId and bookId in reviews).
+- Average book ratings are calculated dynamically based on reviews.
+- Passwords are stored securely with hashing.
+- JWT tokens are used for authentication and protected routes.
+- Pagination and filtering are supported on book and review listings.
 
 ---
 
