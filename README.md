@@ -65,10 +65,12 @@ Passwords are securely hashed and tokens are signed using a secret key stored in
 ```bash
 git clone https://github.com/your-username/book-review-api.git
 cd book-review-api
+```
 
 2. **Clone the Repository**
 ```bash
 npm install
+```
 
 3. **Environment Configuration**
 Create a .env file and include the following:
@@ -76,14 +78,14 @@ Create a .env file and include the following:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_very_secret_key
+```
 
 4. **Start the Server**
 ```bash
 npm start
+```
 
-
-📬 Sample API Usage (Postman-friendly)
-
+## 📬 Sample API Usage (Postman-friendly)
 ➕ Register a New User
 
 ```http
@@ -95,6 +97,7 @@ Content-Type: application/json
   "email": "add@example.com",
   "password": "securepassword"
 }
+```
 
 🔑 Login
 ```http
@@ -103,6 +106,7 @@ POST /login
   "email": "sumed@example.com",
   "password": "securepassword"
 }
+```
 
 📚 Add a Book
 ```http
@@ -115,10 +119,10 @@ Authorization: Bearer <your_token_here>
   "genre": "Productivity",
   "description": "Rules for focused success in a distracted world."
 }
+```
+---------------------------------------------------------------------------------
 
-------------------------------------------------------------------------
-
-✉️ Contact
+## ✉️ Contact
 Developed by Subodh Surwade
 📧 Email: [subodhsurwade04@example.com]
 🔗 GitHub: https://github.com/Subodh-04
