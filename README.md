@@ -1,10 +1,10 @@
-# 📚 Book Review API – Backend System
+# 📚 Book Review System – Backend
 
 A lightweight yet robust REST API built using **Node.js** and **Express**, aimed at powering a Book Review platform where users can register, explore books, and share their reviews in an authenticated and structured way. This project demonstrates a solid grasp of backend fundamentals, token-based authentication, and clean API architecture.
 
 ---
 
-## 🚀 What This API Offers
+## 🚀 What This System Offers
 
 - Secure user registration and login system using **JWT**
 - Authenticated users can add books and leave one review per book
@@ -24,6 +24,43 @@ A lightweight yet robust REST API built using **Node.js** and **Express**, aimed
 - **JWT (JSON Web Tokens)** – Stateless user authentication
 - **bcrypt.js** – Secure password hashing
 - **dotenv** – For managing environment variables
+
+---
+
+## 🗂️ Database Schema Design
+
+**Users Collection**
+| Field       | Type                    | Description                        |
+|-------------|-------------------------|------------------------------------|
+| userId      | ObjectId                |  Unique User Identifier            |
+| username    | String                  |  User's display name               |
+| email       | String                  |  User's unique email               |
+| password    | String                  |  Hashed password                   |
+
+**Books Collection**
+| Field       | Type                    | Description                        |
+|-------------|-------------------------|------------------------------------|
+| bookId      | ObjectId                |  Unique Book Identifier            |
+| title       | String                  |  Book title                        |
+| author      | String                  |  Author's name                     |
+| genre       | String                  |  Book genre                        |
+| description | String                  |  (Optional)Book description        |
+
+**Reviews Collection**
+| Field       | Type          | Description                                |
+| ----------- | ------------- | ------------------------------------------ |
+| reviewId    | ObjectId (PK) | Unique review identifier                   |
+| bookId      | ObjectId (FK) | Reference to the reviewed book             |
+| userId      | ObjectId (FK) | Reference to the user who wrote the review |
+| rating      | Number (1-5)  | Rating given by the user                   |
+| comment     | String        | Review text                                |
+
+**Notes:**
+-Each user can submit only one review per book (enforced by a unique index on userId and bookId in reviews).
+-Average book ratings are calculated dynamically based on reviews.
+-Passwords are stored securely with hashing.
+-JWT tokens are used for authentication and protected routes.
+-Pagination and filtering are supported on book and review listings.
 
 ---
 
